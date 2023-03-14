@@ -70,7 +70,7 @@ else:
     device = torch.device("cpu")
 net = net.to(device)
 
-weight_file = os.path.join(save_dir, 'epoch%d.pth' % (cfg.num_epochs-1))
+weight_file = "epoch59.pth"#os.path.join(save_dir, 'epoch%d.pth' % (cfg.num_epochs-1))
 state_dict = torch.load(weight_file, map_location=device)
 net.load_state_dict(state_dict)
 

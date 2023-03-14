@@ -1,0 +1,5 @@
+*__pycache__*
+*.pth
+*__init__.*.pyc
+*.so
+FaceBoxesV2/utils/nms/cpu_nms.c

@@ -148,7 +148,7 @@ else:
     print('No such reg criterion:', cfg.criterion_reg)
 
 points_flip = None
-if cfg.data_name == 'data_300W':
+if cfg.data_name == 'data_300W' or cfg.data_name == 'lmd3d':
     points_flip = [17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 28, 29, 30, 31, 36, 35, 34, 33, 32, 46, 45, 44, 43, 48, 47, 40, 39, 38, 37, 42, 41, 55, 54, 53, 52, 51, 50, 49, 60, 59, 58, 57, 56, 65, 64, 63, 62, 61, 68, 67, 66]
     points_flip = (np.array(points_flip)-1).tolist()
     assert len(points_flip) == 68
@@ -171,8 +171,8 @@ else:
     print('No such data!')
     exit(0)
 
-normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                 std=[0.229, 0.224, 0.225])
+normalize = transforms.Normalize(mean=[0.5, 0.5, 0.5],
+                                 std=[0.5, 0.5, 0.5])
 
 if cfg.pretrained:  
     optimizer = optim.Adam(net.parameters(), lr=cfg.init_lr)
